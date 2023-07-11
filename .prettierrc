@@ -7,6 +7,6 @@
   "jsxSingleQuote": false,
   "bracketSameLine": false,
   "tabWidth": 2,
-  "printWidth": 80,
+  "printWidth": 120,
   "organizeImportsSkipDestructiveCodeActions": true
 }
