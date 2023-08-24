@@ -6,6 +6,12 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());
 
+  // Add CORS
+  // https://docs.nestjs.com/security/cors
+  app.enableCors();
+
+  // Add Swagger documentation
+  // https://docs.nestjs.com/openapi/introduction
   const config = new DocumentBuilder()
     .setTitle('Fastify NestJS')
     .setDescription('Fastify NestJS API description')
