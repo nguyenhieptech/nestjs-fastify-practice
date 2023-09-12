@@ -7,6 +7,9 @@ async function bootstrap() {
   // https://docs.nestjs.com/techniques/performance#adapter
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());
 
+  // https://docs.nestjs.com/faq/global-prefix
+  app.setGlobalPrefix('api');
+
   // https://docs.nestjs.com/security/cors
   app.enableCors();
 
