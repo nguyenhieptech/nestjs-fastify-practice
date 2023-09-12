@@ -4,13 +4,12 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
+  // https://docs.nestjs.com/techniques/performance#adapter
   const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());
 
-  // Add CORS
   // https://docs.nestjs.com/security/cors
   app.enableCors();
 
-  // Add Swagger documentation
   // https://docs.nestjs.com/openapi/introduction
   const config = new DocumentBuilder()
     .setTitle('Fastify NestJS')
